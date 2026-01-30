@@ -145,7 +145,7 @@ def load_model(
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=(FutureWarning))
-        checkpoint = torch.load(model_path, map_location="cpu", weights_only=False)
+        checkpoint = torch.load(model_path, map_location="cpu")
 
     if use_flash is not None:
         checkpoint["cfg"].encoder.flash_attn = use_flash
